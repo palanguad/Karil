@@ -1,0 +1,216 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Navbar Styles */
+.navbar {
+    background-color: #6c757d; /* Gray background */
+}
+
+.navbar .navbar-brand {
+    color: #ffffff !important; /* White text for the brand */
+}
+
+.navbar .navbar-toggler-icon {
+    background-color: #ffffff; /* White hamburger menu icon */
+}
+
+.navbar-nav .nav-link {
+    color: #ffffff !important; /* White text for links */
+    font-weight: bold;
+}
+
+/* Navbar Links Hover Effect */
+.navbar-nav .nav-link:hover {
+    color: #f8f9fa; /* Lighter color for hover effect */
+    transition: color 0.3s ease;
+}
+
+/* Optional: Active Link Styling */
+.navbar-nav .nav-link.active {
+    color: #007bff; /* Add a different color for active links */
+}
+
+
+/* Hero Section */
+.hero {
+    background: url('assets/images/hero-image.jpg') no-repeat center center / cover;
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #ffffff;
+    padding: 30px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.hero p {
+    font-size: 1.25rem;
+}
+
+.hero .btn {
+    padding: 10px 30px;
+    border-radius: 30px;
+    font-weight: 600;
+}
+
+/* Latest Announcements */
+.latest-announcements {
+    background-color: #f9f9f9;
+}
+
+.latest-announcements h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #0056b3;
+}
+
+.announcement-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.announcement-card:hover {
+    transform: translateY(-5px);
+}
+
+.announcement-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.announcement-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.6);
+    color: #ffffff;
+    padding: 20px;
+    transition: transform 0.3s ease;
+    transform: translateY(100%);
+}
+
+.announcement-card:hover .announcement-overlay {
+    transform: translateY(0);
+}
+
+.announcement-overlay h5 {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.announcement-overlay p {
+    font-size: 1rem;
+}
+
+.announcement-overlay .btn {
+    background-color: #0056b3;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-weight: 600;
+    color: #ffffff;
+    text-transform: uppercase;
+}
+
+/* Academic Programs */
+.academic-programs {
+    background: linear-gradient(to right, #0056b3, #007bff);
+    color: #fff;
+    padding: 60px 0;
+}
+
+.academic-programs h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 40px;
+}
+
+.program-card {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.program-card:hover {
+    transform: translateY(-5px);
+}
+
+.program-card i {
+    color: #0056b3;
+}
+
+.program-card h4 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-top: 20px;
+}
+
+.program-card p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+.program-card .btn {
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-weight: 600;
+}
+
+/* Carousel */
+.carousel-item img {
+    height: 500px;
+    object-fit: cover;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: #0056b3;
+}
+
+/* Footer */
+footer {
+    background-color: #222222;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+footer p {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+/* Responsive Styles */
+@media (max-width: 767px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .announcement-card img {
+        height: 250px;
+    }
+}

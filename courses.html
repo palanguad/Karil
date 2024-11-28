@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses - Karil University</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            padding-top: 80px; /* Adds space below the navbar */
+        }
+
+        .navbar a:hover {
+            color: #f39c12; /* Yellow on hover */
+        }
+
+        .course-card {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            cursor: pointer;
+            height: 300px;
+        }
+
+        .course-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .course-card:hover img {
+            transform: scale(1.1);
+        }
+
+        .course-details {
+            position: absolute;
+            bottom: -100%;
+            left: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            transition: bottom 0.5s ease-in-out;
+        }
+
+        .course-card:hover .course-details {
+            bottom: 0;
+        }
+
+        .course-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        footer {
+            margin-top: 50px; /* Adds spacing above the footer */
+        }
+    </style>
+</head>
+<body>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">
+            <img src="school logo.png" alt="School Logo" width="50" height="50">
+            Karil University
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link active" href="courses.html">Courses</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Courses Section -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <h2 class="text-center mb-4 text-black fw-bold">Our Courses</h2>
+        <div class="row gy-4">
+            <!-- Hospitality Management -->
+            <div class="col-md-6 col-lg-4">
+                <div class="course-card">
+                    <img src="hm.jpg" alt="Hospitality Management">
+                    <div class="course-details">
+                        <div class="course-title">Bachelor of Science in Hospitality Management</div>
+                        <p>Study the art of hospitality, focusing on hotel management, food services, and event planning.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Information Technology -->
+            <div class="col-md-6 col-lg-4">
+                <div class="course-card">
+                    <img src="it.jpg" alt="Information Technology">
+                    <div class="course-details">
+                        <div class="course-title">Bachelor of Science in Information Technology</div>
+                        <p>Gain expertise in IT infrastructure, networking, programming, and cybersecurity.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Agriculture -->
+            <div class="col-md-6 col-lg-4">
+                <div class="course-card">
+                    <img src="agri.JPG" alt="Agriculture">
+                    <div class="course-details">
+                        <div class="course-title">Bachelor of Science in Agriculture</div>
+                        <p>Study agricultural practices, crop production, and sustainable farming techniques.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Midwifery -->
+            <div class="col-md-6 col-lg-4">
+                <div class="course-card">
+                    <img src="midwife.jpg" alt="Midwifery">
+                    <div class="course-details">
+                        <div class="course-title">Bachelor of Science in Midwifery</div>
+                        <p>Train to provide care for pregnant women and assist in childbirth and newborn care.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tourism -->
+            <div class="col-md-6 col-lg-4">
+                <div class="course-card">
+                    <img src="tourism.jpg" alt="Tourism">
+                    <div class="course-details">
+                        <div class="course-title">Bachelor of Science in Tourism</div>
+                        <p>Explore the world of tourism management, including travel agencies, hospitality, and tour operations.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Community Management -->
+            <div class="col-md-6 col-lg-4">
+                <div class="course-card">
+                    <img src="coop.jpg" alt="Community Management">
+                    <div class="course-details">
+                        <div class="course-title">Bachelor of Science in Community Management</div>
+                        <p>Learn the essentials of community development, social work, and managing community projects.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-dark text-white text-center py-3">
+    <p>&copy; 2024 Karil University. All Rights Reserved.</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

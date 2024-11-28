@@ -1,0 +1,416 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karil University</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <!-- Custom CSS -->
+    <style>
+        /* General styling */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin-top: 0; /* Remove margin-top on body */
+        }
+
+        /* Navbar Customization */
+        .navbar {
+            background-color: #343a40; /* Dark navbar color */
+            position: fixed; /* Make the navbar fixed */
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 9999; /* Ensure navbar stays above other content */
+        }
+
+        .navbar a {
+            color: white;
+        }
+
+        .navbar a:hover {
+            color: #f39c12; /* Yellow on hover */
+        }
+
+        /* Carousel Section with Hero Content */
+        #schoolCarousel {
+            margin-top: 0; /* Remove margin-top to remove space between navbar and carousel */
+        }
+
+        #schoolCarousel .carousel-item {
+            height: 60vh;
+        }
+        
+        #schoolCarousel .carousel-item img {
+            object-fit: cover;
+            opacity: 0.8;
+        }
+        
+        .carousel-caption {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 2rem;
+        }
+
+        /* Latest Announcements Section */
+        .latest-announcements {
+            background: #f9f9f9;
+        }
+
+        .announcement-card {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+
+        .announcement-card img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .latest-announcements h2.text-primary {
+    color: black !important; /* Force the color to black */
+}
+
+ /* Announcements container with centered content */
+.latest-announcements .announcement-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.latest-announcements .announcement-card:hover {
+    transform: translateY(-10px);
+}
+
+/* Overlay styles */
+.announcement-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center the overlay */
+    background: rgba(0, 0, 0, 0.7); /* Darker background for better readability */
+    color: white;
+    padding: 20px;
+    width: 80%; /* Set width to 80% of the image for a more compact look */
+    text-align: center;
+    border-radius: 10px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.announcement-card:hover .announcement-overlay {
+    opacity: 1;
+    visibility: visible;
+}
+
+.announcement-overlay h5 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.announcement-overlay p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+/* Button style inside the overlay */
+.announcement-overlay .btn-primary {
+    font-size: 1rem;
+    padding: 10px 20px;
+    background-color: #f39c12;
+    border: none;
+    border-radius: 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.announcement-overlay .btn-primary:hover {
+    background-color: #e67e22;
+}
+
+        /* Academic Programs Section */
+        .academic-programs {
+            background: #f8f9fa;
+        }
+
+        .academic-programs h2.text-primary {
+    color: black !important; /* Force the color to black */
+}
+
+        .card-body i {
+            color: #fff;
+        }
+
+        .card-body h4 {
+            font-weight: 700;
+            color: #000000;
+        }
+
+        .card-body p {
+            color: #fff;
+        }
+
+        .card-body .btn-primary {
+            background-color: #f39c12;
+            border: none;
+        }
+
+        .card-body .btn-primary:hover {
+            background-color: #e67e22;
+        }
+
+        /* Card styles for each program */
+        .primary-card {
+            background-color: #3498db; /* Blue for Primary Education */
+        }
+
+        .secondary-card {
+            background-color: #2ecc71; /* Green for Secondary Education */
+        }
+
+        .higher-card {
+            background-color: #9b59b6; /* Purple for Higher Education */
+        }
+
+        /* Inner Card Designs */
+        .primary-card .card-body {
+            background: #1f77b4; /* Darker blue for the inside */
+            color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .secondary-card .card-body {
+            background: #27ae60; /* Darker green for the inside */
+            color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .higher-card .card-body {
+            background: #8e44ad; /* Darker purple for the inside */
+            color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Card hover effect */
+        .card {
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #343a40;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        footer a {
+            color: #f39c12;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+        <a class="navbar-brand" href="#">
+            <img src="school logo.png" alt="School Logo" width="50" height="50">
+            Karil University
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="courses.html">Courses</a></li>
+
+                <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Carousel Section with Hero Content -->
+<div id="schoolCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <!-- Slide 1 -->
+        <div class="carousel-item active">
+            <div class="position-relative" style="height: 60vh;">
+                <div class="position-absolute top-0 start-0 w-100 h-100" style="background: rgba(0, 0, 0, 0.5);"></div>
+                <img src="carousel1.jpg" class="d-block w-100 h-100" alt="Slide 1">
+                <div class="carousel-caption d-flex flex-column justify-content-center align-items-center position-absolute top-0 bottom-0 start-0 end-0 text-white">
+                    <h1 class="fw-bold">Welcome to Karil University</h1>
+                    <p class="lead">Providing excellence in education since 1990.</p>
+                    <a href="admissions.html" class="btn btn-primary btn-lg px-4 rounded-pill">Enroll Now</a>
+                </div>
+            </div>
+        </div>
+        <!-- Slide 2 -->
+        <div class="carousel-item">
+            <div class="position-relative" style="height: 60vh;">
+                <div class="position-absolute top-0 start-0 w-100 h-100" style="background: rgba(0, 0, 0, 0.5);"></div>
+                <img src="carousel2.jpg" class="d-block w-100 h-100" alt="Slide 2">
+                <div class="carousel-caption d-flex flex-column justify-content-center align-items-center position-absolute top-0 bottom-0 start-0 end-0 text-white">
+                    <h1 class="fw-bold">Explore Our Campus</h1>
+                    <p class="lead">A place for growth and opportunities.</p>
+                </div>
+            </div>
+        </div>
+        <!-- Slide 3 -->
+        <div class="carousel-item">
+            <div class="position-relative" style="height: 60vh;">
+                <div class="position-absolute top-0 start-0 w-100 h-100" style="background: rgba(0, 0, 0, 0.5);"></div>
+                <img src="carousel3.jpg" class="d-block w-100 h-100" alt="Slide 3">
+                <div class="carousel-caption d-flex flex-column justify-content-center align-items-center position-absolute top-0 bottom-0 start-0 end-0 text-white">
+                    <h1 class="fw-bold">Join Our Events</h1>
+                    <p class="lead">Participate in exciting school activities.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#schoolCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#schoolCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+
+<section class="latest-announcements py-5">
+    <div class="container">
+        <h2 class="text-center mb-4 text-primary fw-bold">Latest Announcements</h2>
+        <div class="row gy-4">
+            <div class="col-md-4">
+                <div class="announcement-card shadow-sm overflow-hidden rounded">
+                    <img src="enrollment.jpg" alt="Enrollment" class="img-fluid">
+                    <div class="announcement-overlay p-3">
+                        <h5>Enrollment Open</h5>
+                        <p>"Secure your spot at Karil University and be part of our vibrant academic community! With world-class faculty and state-of-the-art facilities, we are committed to providing you with the best educational experience. Don't miss the chance to shape your future with us!"</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="announcement-card shadow-sm overflow-hidden rounded">
+                    <img src="campustour.jpg" alt="Campus Tour" class="img-fluid">
+                    <div class="announcement-overlay p-3">
+                        <h5>Campus Tours</h5>
+                        <p>"Take a guided tour and explore our beautiful campus, learn about the various academic programs we offer, and see firsthand the resources available to help you succeed. Our friendly staff will be there to answer any questions and provide all the information you need to start your journey at Karil University."</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="announcement-card shadow-sm overflow-hidden rounded">
+                    <img src="graduation ceremony.jpg" alt="Graduation" class="img-fluid">
+                    <div class="announcement-overlay p-3">
+                        <h5>Graduation Ceremony</h5>
+                        <p>"Celebrate the achievements of our graduating students and be a part of this special milestone in their academic journey. The ceremony will feature inspiring speeches, awards, and performances, making it an unforgettable day for all."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Academic Programs Section -->
+<section class="academic-programs py-5">
+    <div class="container">
+        <h2 class="text-center mb-5 text-primary fw-bold">Our Academic Programs</h2>
+        <div class="row gy-4">
+            <div class="col-md-6 col-lg-4">
+                <div class="card shadow-sm border-0 h-100 primary-card">
+                    <div class="card-body">
+                        <i class="fa fa-book fa-3x mb-3"></i>
+                        <h4 class="card-title fw-bold">Primary Education</h4>
+                        <p class="card-text">Building a strong foundation for lifelong learning through structured and engaging curricula.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="card shadow-sm border-0 h-100 secondary-card">
+                    <div class="card-body">
+                        <i class="fa fa-school fa-3x mb-3"></i>
+                        <h4 class="card-title fw-bold">Secondary Education</h4>
+                        <p class="card-text">Providing an enriching environment for academic growth, personal development, and future success.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="card shadow-sm border-0 h-100 higher-card">
+                    <div class="card-body">
+                        <i class="fa fa-graduation-cap fa-3x mb-3"></i>
+                        <h4 class="card-title fw-bold">Higher Education</h4>
+                        <p class="card-text">Fostering academic excellence and leadership skills for the challenges of tomorrow.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    // Toggle the visibility of the announcement overlay when an image is clicked
+    document.querySelectorAll('.announcement-card').forEach(card => {
+        const overlay = card.querySelector('.announcement-overlay');
+        const image = card.querySelector('img');
+        
+        // Show overlay when image is clicked
+        image.addEventListener('click', () => {
+            const isVisible = overlay.style.visibility === 'visible';
+            overlay.style.visibility = isVisible ? 'hidden' : 'visible';
+            overlay.style.opacity = isVisible ? '0' : '1';
+        });
+    });
+
+    // Optionally, add functionality for the carousel control buttons to show overlays
+    document.querySelectorAll('.carousel-control-prev, .carousel-control-next').forEach(button => {
+        button.addEventListener('click', () => {
+            const activeCard = document.querySelector('.carousel-item.active .announcement-card');
+            const overlay = activeCard.querySelector('.announcement-overlay');
+            overlay.style.visibility = 'visible';
+            overlay.style.opacity = '1';
+        });
+    });
+</script>
+
+
+<!-- Footer -->
+<footer>
+    <p>&copy; 2024 Karil University. All Rights Reserved.</p>
+</footer>
+
+<!-- Bootstrap JS Bundle -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

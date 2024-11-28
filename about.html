@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Karil University</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            padding-top: 80px; /* To ensure content is not hidden behind the fixed navbar */
+        }
+
+        .navbar a:hover {
+            color: #f39c12; /* Yellow on hover */
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #000000;
+        }
+
+        .icon-box {
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .icon-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .icon-box i {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #000000;
+        }
+
+        .about-img {
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .quote-section {
+            background: linear-gradient(to right, #2e2f30, #000000);
+            color: white;
+            padding: 3rem 1rem;
+            font-style: italic;
+        }
+
+        footer {
+            background-color: #343a40;
+            color: white;
+        }
+
+        footer a {
+            color: #000000;
+        }
+
+        /* "Why Choose Us" Section */
+        .image-box {
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .image-box img {
+            width: 100%;
+            border-radius: 10px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .image-box:hover img {
+            transform: scale(1.05);
+        }
+
+        .hidden-text {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+            padding: 1rem;
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        .hidden-text h4 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .hidden-text p {
+            font-size: 1rem;
+        }
+
+        .image-box img.active + .hidden-text,
+        .image-box:hover .hidden-text {
+            opacity: 1;
+        }
+
+        .value-card {
+            background-color: #fff;
+            padding: 3rem 2rem;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .value-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .value-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #fff;
+            padding: 1rem;
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .value-card h4 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .value-card p {
+            font-size: 1rem;
+        }
+
+        /* Specific Styles for Each Value Card */
+        .value-integrity {
+            background-color: #4CAF50;
+        }
+
+        .value-integrity .value-icon {
+            background-color: #388E3C;
+        }
+
+        .value-innovation {
+            background-color: #FF9800;
+        }
+
+        .value-innovation .value-icon {
+            background-color: #F57C00;
+        }
+
+        .value-collaboration {
+            background-color: #2196F3;
+        }
+
+        .value-collaboration .value-icon {
+            background-color: #1976D2;
+        }
+
+        .value-respect {
+            background-color: #9C27B0;
+        }
+
+        .value-respect .value-icon {
+            background-color: #7B1FA2;
+        }
+
+        .value-excellence {
+            background-color: #FFC107;
+        }
+
+        .value-excellence .value-icon {
+            background-color: #FFA000;
+        }
+
+        .value-community {
+            background-color: #673AB7;
+        }
+
+        .value-community .value-icon {
+            background-color: #512DA8;
+        }
+
+        /* New class to make Mission and Vision text black */
+        .text-black {
+            color: black;
+        }
+    </style>
+</head>
+<body>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #343a40;">
+    <div class="container">
+        <a class="navbar-brand" href="#">
+            <img src="school logo.png" alt="School Logo" width="50" height="50">
+            Karil University
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="courses.html">Courses</a></li>
+
+                <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- History Section -->
+<section class="py-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <img src="history.jpg" alt="History" class="img-fluid about-img">
+            </div>
+            <div class="col-md-6">
+                <h2 class="section-title">Our History</h2>
+                <p>Established in 1990, Karil University started with a vision of fostering academic excellence and holistic development. Over the years, it has grown into a leading institution, celebrated for its innovation, inclusivity, and impact.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Mission and Vision Section -->
+<section class="bg-light py-5">
+    <div class="container text-center">
+        <h2 class="section-title mb-4">Mission & Vision</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <h4 class="text-black">Mission</h4>
+                <p>To deliver transformative education that nurtures critical thinking, creativity, and global citizenship.</p>
+            </div>
+            <div class="col-md-6">
+                <h4 class="text-black">Vision</h4>
+                <p>To be a beacon of knowledge and innovation, inspiring positive change worldwide.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Our Values Section -->
+<section class="py-5 bg-light">
+    <div class="container text-center">
+        <h2 class="section-title mb-4">Our Values</h2>
+        <div class="row">
+            <!-- Integrity -->
+            <div class="col-md-4">
+                <div class="value-card value-integrity">
+                    <div class="value-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h4>Integrity</h4>
+                    <p>We uphold the highest standards of integrity in our actions, fostering trust and transparency.</p>
+                </div>
+            </div>
+
+            <!-- Innovation -->
+            <div class="col-md-4">
+                <div class="value-card value-innovation">
+                    <div class="value-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h4>Innovation</h4>
+                    <p>We encourage creativity and innovation, preparing students for the challenges of tomorrow.</p>
+                </div>
+            </div>
+
+            <!-- Collaboration -->
+            <div class="col-md-4">
+                <div class="value-card value-collaboration">
+                    <div class="value-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h4>Collaboration</h4>
+                    <p>We believe in the power of teamwork to solve complex problems and achieve shared success.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Why Choose Us Section -->
+<section class="py-5">
+    <div class="container">
+        <h2 class="text-center section-title mb-4">Why Choose Us?</h2>
+        <div class="row gy-4">
+            <div class="col-md-4">
+                <div class="image-box">
+                    <img src="innovative.jpg" alt="Innovative Learning" class="img-fluid">
+                    <div class="hidden-text">
+                        <h4 class="fw-bold">Innovative Learning</h4>
+                        <p>Advanced technology and methodologies to enhance student experiences.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="image-box">
+                    <img src="global.jpg" alt="Global Opportunities" class="img-fluid">
+                    <div class="hidden-text">
+                        <h4 class="fw-bold">Global Opportunities</h4>
+                        <p>International partnerships that open pathways to global careers.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="image-box">
+                    <img src="centered.jpg" alt="Student-Centered" class="img-fluid">
+                    <div class="hidden-text">
+                        <h4 class="fw-bold">Student-Centered</h4>
+                        <p>Personalized mentorship to support your goals and aspirations.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Quote Section -->
+<section class="quote-section text-center">
+    <h3>“Education is the most powerful weapon which you can use to change the world.”</h3>
+    <p>- Nelson Mandela</p>
+</section>
+
+<!-- Footer -->
+<footer class="py-3">
+    <div class="container text-center">
+        <p>&copy; 2024 Karil University. All rights reserved.</p>
+    </div>
+</footer>
+
+<!-- Bootstrap JS and dependencies -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
